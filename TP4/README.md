@@ -1,1 +1,4 @@
-./verrou [file name] pour l'utilisation du programme.
+```C
+./verrou [file name] 
+```
+pour l'utilisation du programme.
