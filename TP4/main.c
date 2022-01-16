@@ -29,13 +29,14 @@ int main(int argc, char* argv[]) {
         char input_cmd, input_type;
         char input_whence = 's';
         
+        // Afin d'éviter l'intéraction avec un fichier non existant
         int fd = open(argv[1],O_RDWR); // -> Ouverture du fichier.
         if(fd < 0) { // -> Cas : le fichier ne peut pas s'ouvrir.
             fprintf(stderr, "Can't open the file '%s': %s\n", argv[1], strerror(errno));
-            exit(EXIT_FAILURE);
+            exit(EXIT_FAILURE); // => cas d'échec.
         }
 
-    for(;;) {
+    for(;;) { /* Demander une commande de verrouillage et l'exécuter */
 
         /* Apparence physique du programme : Soit on tappe '?' puis on recoit les informations nécessaire pour continuer
         Soit on tappe 'exit' pour quitter le programme. */
@@ -47,7 +48,7 @@ int main(int argc, char* argv[]) {
         fflush(stdout); // Clear la sortie standard et forcer à écrire le contenu du buffer.
 
         fgets(input, sizeof(input), stdin); // Permet de lire l'entrée de l'utilisateur et ensuite la traiter.
-        if (strcmp(input, "?\n") == 0) { // Affichage de l'interface d'aide si l'utilisateur tappe "?".
+        if (strcmp(input, "?\n") == 0) { // Affichage de l'interface d'aide si l'utilisateur tappe "?" => Comparaison d'input.
 
             printf("\n");
             printf("    Format : cmd l_type start length [ whence ( optional ) ]\n");
@@ -64,7 +65,7 @@ int main(int argc, char* argv[]) {
             exit(0);
 
         } else {
-            sscanf(input, "%c %c %d %d %c", &input_cmd, &input_type, &input_start, &input_lenght, &input_whence);
+            sscanf(input, "%c %c %d %d %c", &input_cmd, &input_type, &input_start, &input_lenght, &input_whence); // Permet de séparer l'input de l'utilisateur.
         }
 
         // -> Conversion de la commande 'cmd' en flag :
