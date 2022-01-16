@@ -1,0 +1,31 @@
+Nathan Vanson Bachelor Sciences Informatiques 2ème année
+
+Systèmes Informatiques : TP1
+
+Exercice 2 : 
+
+Exercice 2.1 : Commande 'man' 
+Commande effectuée et réussie
+--------------------------------
+Exercice 2.2 : Commande 'echo' 
+La fonction de la commande 'echo' est de pouvoir afficher un ligne de texte sur la sortie standard.
+Les paramètres de cette commande 'echo' sont : echo [options] [texte]
+Il existe plus propriétés sur cette commande, comme par exemple 'echo -n' qui permet d'afficher la ligne de texte directement sur la même ligne qui nous
+permet d'effectuer les commandes.
+--------------------------------
+Exercice 2.3 : Create a file
+Il est possible de créer un fichier vide à partir de la ligne de commande en utilisant la commande 'touch'
+--------------------------------
+Exercice 2.4 : Lancement de programmes
+--------------------------------
+Exercice 2.5 : Fichiers
+a) Les trois commandes présentés nous renvoient le nombre de mots présents dans le fichier foo.txt, mais de manière différentes :
+- wc -w < foo.txt lui est censé nous donner le nombre de lettres présentes de le fichier mais le -w -> le nombres de mots
+- 
+-
+b) La commande  'head foo.txt -n 6' va prendre en arguments le nom du fichier va ressortir les 6 premières lignes de son contenu, tandis que la commande
+'tail foo.txt -n 6' va sortir les 6 dernières lignes de son contenu.
+c) Lorsque le fichier foo.txt existe la commande effectué dans cette question va envoyer le contenu de ce dernier dans 'out1.txt', oû c'est à ce moment là
+que on va triée (sort) le contenu par ordre alphabétique, puis va dans le fichier 'out2.txt', déjà triée.
+--------------------------------
+Exercice 2.6 : Scripts
